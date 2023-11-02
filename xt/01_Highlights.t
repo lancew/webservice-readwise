@@ -32,7 +32,4 @@ is $result->{results}[0],
     url            => E(),
     }, 'First highlight has correct keys';
 
-use Data::Dumper;
-warn Dumper $result->{results}[0];
-
 done_testing;

@@ -8,7 +8,7 @@ my $rw = WebService::Readwise->new(
 );
 
 is( $rw->base_url,
-    'https://readwise.io/api/v2/auth/',
+    'https://readwise.io/api/v2/',
     'Base url defaults to https://readwise.io/api/v2/auth/'
 );
 
