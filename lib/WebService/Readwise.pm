@@ -40,9 +40,15 @@ sub auth {
 }
 
 sub export {
-    my $self = shift;
+    my ($self, %params) = @_;
 
-    my $response = $self->http->request( 'GET', $self->base_url . 'export/',
+    my $path = 'export/';
+    if (%params && $params{'pageCursor'}) {
+        $path .= '?pageCursor=' . $params{pageCursor};
+    }
+
+
+    my $response = $self->http->request( 'GET', $self->base_url . $path,
         { headers => { Authorization => "Token $self->{token}", }, } );
 
     

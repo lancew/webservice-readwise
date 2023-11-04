@@ -58,4 +58,18 @@ is $result->{results}[0]{highlights}[0],
     },
     '1st highlight in 1st result is correct format';
 
+
+# The following test relies on there being more than one page of results
+# which is true of original author but may not be correct for others
+my $result_page_2 = $sr->export(
+    pageCursor => $result->{nextPageCursor},
+);
+
+is $result_page_2, {
+    count => E(),
+    nextPageCursor => undef,
+    results => E(),
+}, 'Second page of results structure is as expected';
+
+
 done_testing;
