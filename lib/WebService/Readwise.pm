@@ -39,6 +39,22 @@ sub auth {
     return $response->{status};
 }
 
+sub export {
+    my $self = shift;
+
+    my $response = $self->http->request( 'GET', $self->base_url . 'export/',
+        { headers => { Authorization => "Token $self->{token}", }, } );
+
+    
+    if ( !$response->{success} ) {
+        return 'Response error';
+    }
+
+    my $json = decode_json $response->{content};
+
+    return $json;  
+}
+
 sub highlights {
     my $self = shift;
 
