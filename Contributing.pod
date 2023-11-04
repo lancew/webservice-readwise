@@ -1,0 +1,18 @@
+=pod
+
+=encoding UTF-8
+
+=head1 GETTING INVOLVED
+
+Please collaborate on this project.
+
+It is very basic at present so there is plenty of easy things you might add.
+
+Take a look at the git repository and make a pull request.
+
+If you want to chat about this project; please contact Lance.
+
+Please be kind with your words and actions.
+
+=cut
+
